@@ -1,5 +1,5 @@
 <?php
-namespace Wish;
+namespace XiangYu2038\Wish;
 use Illuminate\Support\Facades\Facade;
 
 

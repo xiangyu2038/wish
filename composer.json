@@ -15,7 +15,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "Wish\\": "src/"
+            "XiangYu2038\\Wish\\": "src/"
         }
     }
 }

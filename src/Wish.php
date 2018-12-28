@@ -1,5 +1,5 @@
 <?php
-  namespace Wish;
+namespace XiangYu2038\Wish;
   class Wish
   {
 
