@@ -11,7 +11,7 @@ class XY extends Facade
      * @return mixed
      */
     protected static function getFacadeAccessor() {
-        return Wish::class;
+        return new Wish();
     }
 
 
