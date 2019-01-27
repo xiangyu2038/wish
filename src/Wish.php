@@ -10,8 +10,7 @@ namespace XiangYu2038\Wish;
       protected $current_realation = '';
 
       public function with($with){
-
-          $this -> with = clone $with;
+          $this -> with =  unserialize(serialize($with));
           return $this;
       }
 
@@ -76,6 +75,7 @@ namespace XiangYu2038\Wish;
 
           foreach ($add as $v){
              $f = 'get'.ucfirst(convertUnderline($v));
+
               $model->setAttribute($v,$model->$f());
           }
 
@@ -112,6 +112,7 @@ namespace XiangYu2038\Wish;
 
           foreach ( $model -> getrelations() as $key=> $v){
 
+
                   $current_realation = $key;
 
                   if ($v instanceof \Illuminate\Database\Eloquent\Model) {
@@ -122,14 +123,13 @@ namespace XiangYu2038\Wish;
 
                       continue;
                   }
-
+                  if(!$v){
+                      continue;
+                  }
                   foreach ($v as $vv) {
-
                       $this->relation($vv);
                       $this->setAll($vv, $key,$current_realation);
-
-
-              }
+                  }
           }
       }
 
